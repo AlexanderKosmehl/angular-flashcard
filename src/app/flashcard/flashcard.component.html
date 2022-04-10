@@ -1,0 +1,13 @@
+<div class="card" [ngClass]="{'flip': flip === true}" (click)="flipCard()">
+  <div class="front">
+    {{flashcard.question}}
+    <div class="flashcard-options">
+      <div class="flashcard-option" *ngFor="let option of flashcard.options">
+        {{option}}
+      </div>
+    </div>
+  </div>
+  <div class="back">
+    {{flashcard.answer}}
+  </div>
+</div>

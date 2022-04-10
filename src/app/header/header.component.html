@@ -1,0 +1,16 @@
+<header class="header">
+  <div class="form-group">
+    <label for="category">Category</label>
+    <select id="category" [(ngModel)]="selectedCategory">
+      <option value="0" disabled hidden>Select a Category...</option>
+      <option *ngFor="let category of categories" [ngValue]="category.id">{{category.name}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="amount">Number of Questions</label>
+    <input id="amount" type="number" [(ngModel)]="selectedAmount" min="1" step="1" />
+  </div>
+  <div class="form-group">
+    <button class="btn" (click)="generateCards(selectedCategory, selectedAmount)">Generate</button>
+  </div>
+</header>
